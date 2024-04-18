@@ -8,22 +8,23 @@ export default function Home() {
   const [prediction, setPrediction] = useState(null);
   const [error, setError] = useState(null);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleClick = async () => {
     const response = await fetch("/api/predictions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        prompt: e.target.prompt.value,
+        prompt: "Enter a prompt to display an image", // Replace with your desired prompt
       }),
     });
+
     let prediction = await response.json();
     if (response.status !== 201) {
       setError(prediction.detail);
       return;
     }
+
     setPrediction(prediction);
 
     while (
@@ -47,28 +48,15 @@ export default function Home() {
       <Head>
         <title>Replicate + Next.js</title>
       </Head>
-
       <h1 className="py-6 text-center font-bold text-2xl">
-        Dream something with{" "}
-        <a href="https://replicate.com/stability-ai/sdxl?utm_source=project&utm_project=getting-started">
-          SDXL
-        </a>
+        Mixtape Album Art Generator
       </h1>
-
-      <form className="w-full flex" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          className="flex-grow"
-          name="prompt"
-          placeholder="Enter a prompt to display an image"
-        />
-        <button className="button" type="submit">
+      <div className="flex justify-center">
+        <button className="button" onClick={handleClick}>
           Go!
         </button>
-      </form>
-
+      </div>
       {error && <div>{error}</div>}
-
       {prediction && (
         <>
           {prediction.output && (

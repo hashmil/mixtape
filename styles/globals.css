@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply bg-[#7968E0];
+}
+
 input {
   @apply border;
   @apply border-solid;
@@ -16,7 +20,7 @@ input {
 }
 
 .button {
-  @apply bg-black text-white rounded-r-md inline-block px-5 py-3;
+  @apply bg-black text-white rounded-md inline-block px-5 py-3;
 }
 
 .image-wrapper {
