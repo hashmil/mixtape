@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <div className="container max-w-2xl mx-auto p-5">
       <Head>
-        <title>Replicate + Next.js</title>
+        <title>Mixtape Album Art Generator</title>
       </Head>
       <h1 className="py-6 text-center font-bold text-2xl">
         Mixtape Album Art Generator
