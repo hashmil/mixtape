@@ -23,7 +23,7 @@ export default async function handler(req, res) {
       width: 768,
       height: 768,
       prompt:
-        "pattern, abstract art, de stijl, flat vector design, flat colours, three vibrant and bright colours, bright blue, lime green, magenta, large geometric shapes, random shapes, solid colours, digital art, tiny dot texture, noise texture",
+        "pattern, abstract art, de stijl, flat vector design, flat colours, three vibrant and bright colours, bright blue, lime green, magenta, purple, large geometric shapes, random shapes, solid colours, digital art, tiny dot texture, noise texture",
       refine: "expert_ensemble_refiner",
       scheduler: "DDIM",
       lora_scale: 0.6,
@@ -31,7 +31,8 @@ export default async function handler(req, res) {
       guidance_scale: 20,
       apply_watermark: false,
       high_noise_frac: 0.8,
-      negative_prompt: "shadows, 3d, depth, white, black, lines, gradients",
+      negative_prompt:
+        "shadows, 3d, depth, yellow, white, black, lines, gradients",
       prompt_strength: 1,
       num_inference_steps: 20,
     },
