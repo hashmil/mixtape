@@ -35,6 +35,7 @@ export default async function handler(req, res) {
         "shadows, 3d, depth, yellow, white, black, lines, gradients",
       prompt_strength: 1,
       num_inference_steps: 20,
+      disable_safety_checker: true,
     },
   });
 
